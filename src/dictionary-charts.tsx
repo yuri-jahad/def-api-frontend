@@ -13,13 +13,13 @@ import { css } from '~styled-system/css'
 
 const DictionaryCharts = () => {
   const [copiedIndex, setCopiedIndex] = useState(null)
-  const [expandedIndex, setExpandedIndex] = useState(null) // nouveau state
-  const serverUrl = 'http://localhost:5200/api/vocabulary'
+  const [expandedIndex, setExpandedIndex] = useState(null) 
+  const serverUrl = 'https://mwamed.com/syllabe-boreale/api/vocabulary'
 
   const sourceData = [
     { source: 'Larousse', definitions: 990992 },
-    { source: 'Wiktionary', definitions: 572727 },
-    { source: 'LeDictionary', definitions: 339440 },
+    { source: 'Wiktionnaire', definitions: 572727 },
+    { source: 'LeDictionnaire', definitions: 339440 },
     { source: 'Robert', definitions: 108488 },
     { source: 'Universalis', definitions: 47811 },
     { source: 'Cordial', definitions: 39545 }
