@@ -25,7 +25,7 @@ const DictionaryCharts = () => {
     { source: 'Cordial', definitions: 39545 }
   ]
 
-  const generalStats = [
+  const generalStats: any = [
     { metric: 'Total Definitions', value: 2099003 },
     { metric: 'Words with Definition', value: 461244 },
     { metric: 'Avg Definitions/Word', value: (2099003 / 461244).toFixed(1) }
@@ -186,12 +186,12 @@ const DictionaryCharts = () => {
     { metric: 'Available Sources', value: '6 dictionaries' }
   ]
 
-  const formatNumber = value =>
+  const formatNumber = (value: any) =>
     typeof value === 'number'
       ? new Intl.NumberFormat('en-US').format(value)
       : value
 
-  const handleCopy = async (endpoint, index) => {
+  const handleCopy = async (endpoint: any, index: any) => {
     try {
       await navigator.clipboard.writeText(`${serverUrl}${endpoint.path}`)
       setCopiedIndex(index)
@@ -201,11 +201,11 @@ const DictionaryCharts = () => {
     }
   }
 
-  const toggleExpand = index => {
+  const toggleExpand = (index: any) => {
     setExpandedIndex(expandedIndex === index ? null : index)
   }
 
-  const renderPathWithColors = path => {
+  const renderPathWithColors = (path: any) => {
     return path
       .replace(
         /\{word\}/g,
@@ -221,7 +221,7 @@ const DictionaryCharts = () => {
       )
   }
 
-  const renderBodySchema = body => {
+  const renderBodySchema = (body: any) => {
     if (!body) return null
     const coloredBody = JSON.stringify(body, null, 2)
       .replace(
@@ -262,7 +262,7 @@ const DictionaryCharts = () => {
     )
   }
 
-  const renderExampleSchema = example => {
+  const renderExampleSchema = (example: any) => {
     if (!example) return null
     const coloredExample = JSON.stringify(example, null, 2)
     return (
@@ -272,7 +272,7 @@ const DictionaryCharts = () => {
           color: '#9ca3af',
           fontFamily: 'mono',
           mt: '2',
-          bg: '#181818',
+          bg: '#',
           p: '2',
           borderRadius: 'sm',
           border: '1px solid #2a2a2a'
@@ -405,16 +405,6 @@ const DictionaryCharts = () => {
               w: '100%'
             })}
           >
-            <h3
-              className={css({
-                fontSize: { base: 'md', md: 'lg' },
-                fontWeight: 'bold',
-                mb: { base: '2', md: '3' },
-                color: '#f1f5f9'
-              })}
-            >
-              Sources Distribution
-            </h3>
             <div className={css({ flex: '1', minH: '250px', w: '100%' })}>
               <ResponsiveContainer width='100%' height='100%'>
                 <BarChart
