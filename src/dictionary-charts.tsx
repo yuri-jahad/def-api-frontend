@@ -14,7 +14,7 @@ import { css } from '~styled-system/css'
 const DictionaryCharts = () => {
   const [copiedIndex, setCopiedIndex] = useState(null)
   const [expandedIndex, setExpandedIndex] = useState(null) 
-  const serverUrl = 'https://mwamed.com/syllabe-boreale/api/vocabulary'
+  const serverUrl = 'https://mwamed.com/syllabe-boreale/server/api/vocabulary'
 
   const sourceData = [
     { source: 'Larousse', definitions: 990992 },
@@ -635,7 +635,7 @@ const DictionaryCharts = () => {
           <div
             className={css({
               fontSize: { base: 'xs', md: 'sm' },
-              color: '#6b7280',
+              color: '#ce4257',
               fontFamily: 'mono'
             })}
           >
