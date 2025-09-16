@@ -635,7 +635,7 @@ const DictionaryCharts = () => {
           <div
             className={css({
               fontSize: { base: 'xs', md: 'sm' },
-              color: '#6b7280',
+              color: '#ce4257',
               fontFamily: 'mono'
             })}
           >
